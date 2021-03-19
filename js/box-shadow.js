@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     const colorInti = (color, op, hl, vl, br, sf, i = '') => {
-        return hexToRGB(color, op) + ' ' + hl + '<span class="pixel">px</span> ' + vl + '<span class="pixel">px</span> ' + br + '<span class="pixel">px</span> ' + sf + '<span class="pixel">px</span> ' + i;
+        return hexToRGB(color, op) + ' ' + hl + 'px ' + vl + 'px ' + br + 'px ' + sf + 'px ' + i;
     }
 
     //QUAIS CAMPOS E ELEMENTOS
