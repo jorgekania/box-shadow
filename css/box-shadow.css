@@ -46,14 +46,9 @@ fieldset {
 .block-config .row{
     display: flow-root;
 }
-
-
-
 .opacity-knob.selected div {
     background-position: -39px -39px;
 }
-
-
 .block-config .row {
     width: 100%;
     padding: 0 0 10px;
@@ -354,3 +349,25 @@ html .ui-button.ui-state-disabled:active{
     height: 380px;
 }
 
+#box-shadow-code{
+    background-color: #282A36;
+    font-weight: 200;
+    color: rgb(0, 255, 242);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+#box-shadow-code .class{
+     color:rgb(73, 218, 45);
+     font-weight: 500;
+}
+
+#box-shadow-code .keys{
+    color: orange;
+}
+#box-shadow-code .valueProp{
+    color: #B29CE0;
+}
+#box-shadow-code .pixel{
+    color: #F97DC2
+}

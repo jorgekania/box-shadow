@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     const colorInti = (color, op, hl, vl, br, sf, i = '') => {
-        return hexToRGB(color, op) + ' ' + hl + 'px ' + vl + 'px ' + br + 'px ' + sf + 'px ' + i;
+        return hexToRGB(color, op) + ' ' + hl + '<span class="pixel">px</span> ' + vl + '<span class="pixel">px</span> ' + br + '<span class="pixel">px</span> ' + sf + '<span class="pixel">px</span> ' + i;
     }
 
     //QUAIS CAMPOS E ELEMENTOS
@@ -150,12 +150,12 @@ $(document).ready(function () {
             valBoxColor = valBoxColor;
         }
         boxCode.html(
-            '<span class=text-danger>.sua-classe</span> {' +
-            '<div>' + tab + 'background-color: ' + valBoxColor + ';</div>\n' +
-            '<div>' + tab + '<i>-webkit-box-shadow: ' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</div>\n' +
-            '<div>' + tab + '-moz-box-shadow: ' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</div>\n' +
-            '<div>' + tab + 'box-shadow: ' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</div>\n' +
-            '</i>}'
+            '<span class="class"><i>.sua-classe</span> <span class="keys">{</span>' +
+            '<div>' + tab + 'background-color: <span class="valueProp">' + valBoxColor + '</span>;</div>\n' +
+            '<div>' + tab + '-webkit-box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n' +
+            '<div>' + tab + '-moz-box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n' +
+            '<div>' + tab + 'box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n' +
+            '<span class="keys">}</span></i>'
         );
     }
     const updateShadow = () => {
