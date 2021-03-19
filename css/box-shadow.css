@@ -1,0 +1,356 @@
+img {
+    border-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #626262;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h3:first-child {
+    margin-top: 0;
+}
+
+input,
+textarea,
+select {
+    font: 12px/15px "Source Sans Pro", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+    color: #aaa;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+form,
+fieldset {
+    margin: 0;
+    padding: 0;
+    border-style: none;
+}
+.title{
+    font-weight: 700;
+    letter-spacing: .25rem;
+}
+.block-config{
+    padding: 21px 0 23px;
+    border-bottom: 1px dotted #ccc ;
+    border-width: thick;
+}
+
+.block-config .row{
+    display: flow-root;
+}
+
+
+
+.opacity-knob.selected div {
+    background-position: -39px -39px;
+}
+
+
+.block-config .row {
+    width: 100%;
+    padding: 0 0 10px;
+}
+
+.block-config .row.color-row {
+    padding: 11px 0 9px;
+}
+
+.block-config label,
+.block-config .label {
+    float: left;
+    margin: 0 0 0 5px;
+}
+
+.block-config .align-right {
+    float: right;
+    margin: 0 0 0 6px;
+}
+
+.block-config .text-1,
+.block-config .text-2 {
+    float: right;
+    padding: 0 0 0 5px;
+}
+
+.text-1 input {
+    width: 2.5em;
+}
+
+.block-config .text-2 {
+    background: url(../img/sprite.png) no-repeat -97px -260px;
+}
+
+.block-config .text-2 input {
+    float: left;
+    width: 4em;
+    height: 1.4rem;
+    padding: 3px 2px 4px;
+    margin: 0;
+    text-align: left;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+.slider-bar {
+    background: url(../img/sprite.png) no-repeat 0 -310px;
+    width: 198px;
+    height: 10px;
+    position: relative;
+    box-shadow: 0 1px 5px rgb(238, 238, 238) inset;
+}
+
+.ui-state-active{
+    border: 1px solid #007BFF !important;
+    background:#007BFF !important;
+    font-size: 0.8rem;
+    color: #fff;
+}
+.ui-icon-background, .ui-state-active .ui-icon-background{
+    border:#26dcdc;
+    font-size: 0.8rem;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, 
+html .ui-button.ui-state-disabled:active{
+    font-size: 0.8rem !important;
+}
+
+.ui-slider-handle:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.slider-bar.large {
+    background-position: -170px -438px;
+    width: 290px;
+}
+
+.slider-bar.hue-bar {
+    background-position: 0 -380px;
+}
+
+.slider-bar.saturation-bar {
+    background-position: 0 -400px;
+}
+
+.slider-bar.lightness-bar {
+    background-position: 0 -420px;
+}
+
+.btn-link-1:hover{
+    text-decoration: none;
+}
+
+.option-panel {
+    overflow: hidden;
+    padding: 0 46px 4px 40px;
+    line-height: 18px;
+}
+
+.block-config .option-panel {
+    margin: -4px 0 0;
+}
+
+.option-panel > span {
+    float: right;
+}
+
+.option-panel > span:first-child {
+    float:left;
+}
+
+.slider-block {
+    overflow: hidden;
+    width: 78px;
+    height: 18px;
+    padding: 5px 0 3px 2px;
+    margin: 0 auto;
+    line-height: 0;
+}
+
+.slider-block.marked {
+    width: 50px;
+}
+
+.block-config .slider-block {
+    float: right;
+}
+
+.option-panel .slider-block {
+    float: none;
+}
+
+.slider-block .dot {
+    background: url(../img/sprite.png) no-repeat -429px -1px;
+    display: inline-block;
+    vertical-align: top;
+    width: 8px;
+    height: 8px;
+    margin: 1px 0 0;
+}
+
+.slider-block .dot.selected {
+    background-position: -361px -1px;
+}
+
+.slider-block .slider-small {
+    background: url(../img/sprite.png) no-repeat -374px 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 10px;
+    margin: 0 1px;
+    position: relative;
+}
+
+.slider-block.marked .slider-small {
+    margin: 0;
+}
+
+*+html .slider-block .dot,
+*+html .slider-block .slider-small {
+    display: inline;
+}
+
+*+html .slider-block .slider-small {
+    margin: 0 5px;
+}
+
+.slider-block .knob.left-pos {
+    left: 0;
+}
+
+.slider-block .knob.right-pos {
+    right: 0;
+}
+
+.slider-block.marked .knob.left-pos {
+    background: url(../img/sprite-knobs.png) no-repeat 0 -114px;
+}
+
+.slider-block.marked .knob.right-pos {
+    background: url(../img/sprite-knobs.png) no-repeat -44px -114px;
+}
+
+.bottom-separator {
+    background-image: linear-gradient(to right, #333 20%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+}
+
+
+.block-config {
+    padding: 21px 0 23px;
+}
+
+.block-config:first-child {
+    background: none;
+    padding-top: 0;
+}
+
+.block-config .color-row {
+    padding: 0;
+    margin: -3px 0 0;
+    position: relative;
+    top: 3px;
+}
+
+.block-config.wrap {
+    margin: -4px 0 0;
+    padding-bottom: 5px;
+}
+
+*+html .block-config.wrap {
+    position: relative;
+    top: -5px;
+    margin-bottom: -5px;
+}
+
+.block-config.wrap .row {
+    float: right;
+    width: auto;
+    clear: right;
+    padding: 0 0 15px;
+}
+
+*+html .block-config.wrap .row {
+    padding: 2px 0 15px;
+}
+
+.block-config.wrap label {
+    float: none;
+    margin: 0;
+}
+
+.block-config.wrap .text-1 {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+.box-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 700px;
+}
+.box-shadow-modify{
+    
+}
+*+html .block-config.wrap .text-1 {
+    display: inline;
+    margin: -2px 4px 0 0;
+}
+.box-wrap {
+    width: 390px;
+    height: 370px;
+    margin: 77px auto 0;
+    position: relative;
+}
+
+.box-wrap img {
+    display: block;
+}
+
+.box-wrap .content {
+    border: 1px solid #666;
+    background: #fff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+    width: 298px;
+    padding: 20px;
+    position: absolute;
+    top: 83px;
+    left: 15px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.box-wrap .content p {
+    margin: 0 0 15px;
+}
+
+#box-shadow-panel {
+    width: 370px;
+    height: 380px;
+}
+
+#box-shadow-object {
+    width: 370px;
+    height: 380px;
+}
+
