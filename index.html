@@ -62,13 +62,132 @@
                         Configurações
                     </div>
                     <div class="card-body">
+                        <!-- BORDER -->
+                        <div class="block-config">
+                            <div class="row">
+                                <label for="border-lenght">Tamanho da Borda</label>
+                                <label class="align-right" for="border-lenght">px</label>
+                                <div class="text-1">
+                                    <input id="border-length" type="text" value="1" disabled>
+                                </div>
+                            </div>
+                            <div id="slider-border-bs"
+                                class="slider-bar large ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                    style="left: 0%;"></a>
+                            </div>
+                            <!-- BORDER STYLE -->
+                            <div class="row mt-3">
+                                <label class="mr-3" for="style-border">Estilo da Borda</label>
+                                <select name="style-border" id="style-border">
+                                    <option>Solid</option>
+                                    <option>Dotted</option>
+                                    <option>Dashed</option>
+                                    <option>Double</option>
+                                    <option>Hidden</option>
+                                    <option>Ridge</option>
+                                    <option>Inset</option>
+                                    <option>Outset</option>
+                                </select>
+                            </div>
+                            <!-- BORDER COLOR -->
+                            <div class="row mt-2">
+                                <label for="border-color">Cor da borda</label>
+                                <div class="text-2">
+                                    <input id="border-color" class="colorpicker" type="text" value="#000000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-config">
+                            <!--  BORDER RADIUS -->
+                            <div class="row">
+                                <label for="box-border-radius">Tamanho da Borda Arredondada</label>
+                                <label class="align-right all-radius-value" for="box-border-radius">px</label>
+                                <div class="text-1 all-radius-value">
+                                    <input id="box-border-radius" type="text" value="0" disabled>
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="option-radius">
+                                    <label for="all-border-radius">Todos os raios iguais</label>
+                                    <input type="checkbox" name="all-border-radius" id="all-border-radius" checked>
+                                </div>
+                            </div>
+                            <!-- CASO ESTEJA MARCADO PARA DEIXAR TODOS OS BORDER RADIUS IGUAIS -->
+                            <div id="slider-border-radius-all"
+                                class="slider-bar large ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                    style="left: 0%;"></a>
+                            </div>
+
+                            <!-- CASO ESTEJA MARCADO PARA PERSONALIZAR CADA BORDER RADIUS DIFERENTE -->
+                            <div class="slider-border-radius-single">
+                                <!-- TOP LEFT -->
+                                <div class="row">
+                                    <label class="box-border-radius-single-tl float-right"
+                                        for="box-border-radius">px</label>
+                                    <div class="text-1 all-radius-single">
+                                        <input id="box-border-radius-single-tl" type="text" value="0" disabled>
+                                    </div>
+                                    <span>Border Radius Canto T/E</span>
+                                    <div id="slider-border-radius-tl"
+                                        class="slider-bar large ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                            style="left: 0%;"></a>
+                                    </div>
+                                </div>
+                                <!-- TOP RIGHT -->
+                                <div class="row">
+                                    <label class="box-border-radius-single-tr float-right"
+                                        for="box-border-radius">px</label>
+                                    <div class="text-1 all-radius-single">
+                                        <input id="box-border-radius-single-tr" type="text" value="0" disabled>
+                                    </div>
+                                    <span>Border Radius Canto T/D</span>
+                                    <div id="slider-border-radius-tr"
+                                        class="slider-bar large ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                            style="left: 0%;"></a>
+                                    </div>
+                                </div>
+                                <!-- BOTTOM LEFT -->
+                                <div class="row">
+                                    <label class="box-border-radius-single-bl float-right"
+                                        for="box-border-radius">px</label>
+                                    <div class="text-1 all-radius-single">
+                                        <input id="box-border-radius-single-bl" type="text" value="0" disabled>
+                                    </div>
+                                    <span>Border Radius Canto B/E</span>
+                                    <div id="slider-border-radius-bl"
+                                        class="slider-bar large ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                            style="left: 0%;"></a>
+                                    </div>
+                                </div>
+                                <!-- BOTTOM RIGHT -->
+                                <div class="row">
+                                    <label class="box-border-radius-single-br float-right"
+                                        for="box-border-radius">px</label>
+                                    <div class="text-1 all-radius-single">
+                                        <input id="box-border-radius-single-br" type="text" value="0" disabled>
+                                    </div>
+                                    <span>Border Radius Canto B/D</span>
+                                    <div id="slider-border-radius-br"
+                                        class="slider-bar large ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                            style="left: 0%;"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                         <!-- CONFIG HORIZONTAL LENGTH -->
                         <div class="block-config">
                             <div class="row">
                                 <label for="horizontal-length">Tamanho Horizontal</label>
                                 <label class="align-right" for="horizontal-length">px</label>
                                 <div class="text-1">
-                                    <input id="horizontal-length" type="text" value="0">
+                                    <input id="horizontal-length" type="text" value="0" disabled>
                                 </div>
                             </div>
                             <div id="slider-horizontal-bs"
@@ -81,7 +200,7 @@
                                 <label for="vertical-length">Tamanho Vertical</label>
                                 <label class="align-right" for="vertical-length">px</label>
                                 <div class="text-1">
-                                    <input id="vertical-length" type="text" value="0">
+                                    <input id="vertical-length" type="text" value="0" disabled>
                                 </div>
                             </div>
                             <div id="slider-vertical-bs"
@@ -96,7 +215,7 @@
                                 <label for="blur-radius">Propriedade Blur Radius</label>
                                 <label class="align-right" for="blur-radius">px</label>
                                 <div class="text-1">
-                                    <input id="blur-radius" type="text" value="36">
+                                    <input id="blur-radius" type="text" value="36" disabled>
                                 </div>
                             </div>
                             <div id="slider-blur-bs"
@@ -109,7 +228,7 @@
                                 <label for="spread-field">Tamanho do Raio</label>
                                 <label class="align-right" for="spread-field">px</label>
                                 <div class="text-1">
-                                    <input id="spread-field" type="text" value="36">
+                                    <input id="spread-field" type="text" value="36" disabled>
                                 </div>
                             </div>
                             <div id="slider-spread-field"

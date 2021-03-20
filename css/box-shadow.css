@@ -117,6 +117,14 @@ fieldset {
 html .ui-button.ui-state-disabled:active{
     font-size: 0.8rem !important;
 }
+.ui-state-default{
+    color: #F5F5F5 !important;
+}
+
+.ui-icon-background, .ui-state-active .ui-icon-background{
+    background-color: #F5F5F5 !important;
+    border: 1px solid #ccc !important;
+}
 
 .ui-slider-handle:hover {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -345,7 +353,7 @@ html .ui-button.ui-state-disabled:active{
 }
 
 #box-shadow-object {
-    width: 370px;
+    width: 380px;
     height: 380px;
 }
 
@@ -370,4 +378,14 @@ html .ui-button.ui-state-disabled:active{
 }
 #box-shadow-code .pixel{
     color: #F97DC2
+}
+
+.slider-border-radius-single{
+    display: none;
+}
+.all-radius-single {
+    margin: 0 10px 0 0 !important;
+}
+.box-border-radius-single-tl, .box-border-radius-single-tr, .box-border-radius-single-bl, .box-border-radius-single-br{
+    margin: 0 10px 0 0 !important;
 }
