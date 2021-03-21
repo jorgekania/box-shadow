@@ -1,3 +1,6 @@
+<?php
+include_once("./config/config.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,17 +8,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    echo "\n";
+    foreach (SEO as $k => $v) {
+        echo SEO[$k] . "\n";
+    }
+    ?>
     <link rel="icon" href="./img/css.svg" sizes="16x16 32x32" type="image/png">
-    <title>CSS Generator - Border Radius/Noise Texture/Box Shadow/Gradiente Generator</title>
 
     <!-- STYLES CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
 
     <link type="text/css" rel="stylesheet" href="./css/all.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JNTXYGKFJV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JNTXYGKFJV');
+    </script>
 </head>
 
 <body>
@@ -35,8 +55,7 @@
                 <li class="nav-item"><a class="nav-link" href="#">Lorem Ipsum</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Lorem Ipsum IMG</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bars"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -50,7 +69,12 @@
         </nav>
         <div class="row justify-content-center mt-2 mb-3">
             <div class="banner ">
-                <img src="holder.js/728x90?theme=gray">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- 728x90-2 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8629327840737258" data-ad-slot="3968710533" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
 
@@ -71,8 +95,7 @@
                                     <input id="border-length" type="text" value="1" disabled>
                                 </div>
                             </div>
-                            <div id="slider-border-bs" class="slider-bar large" data-value="0" data-min="0"
-                                data-max="100" data-step="1">
+                            <div id="slider-border-bs" class="slider-bar large" data-value="0" data-min="0" data-max="100" data-step="1">
                             </div>
                             <!-- BORDER STYLE -->
                             <div class="row mt-3">
@@ -112,58 +135,49 @@
                                 </div>
                             </div>
                             <!-- CASO ESTEJA MARCADO PARA DEIXAR TODOS OS BORDER RADIUS IGUAIS -->
-                            <div id="slider-border-radius-all" class="slider-bar large" data-value="0" data-min="0"
-                                data-max="50" data-step="1">
+                            <div id="slider-border-radius-all" class="slider-bar large" data-value="0" data-min="0" data-max="50" data-step="1">
                             </div>
 
                             <!-- CASO ESTEJA MARCADO PARA PERSONALIZAR CADA BORDER RADIUS DIFERENTE -->
                             <div class="slider-border-radius-single">
                                 <!-- TOP LEFT -->
                                 <div class="row">
-                                    <label class="box-border-radius-single-tl float-right"
-                                        for="box-border-radius">%</label>
+                                    <label class="box-border-radius-single-tl float-right" for="box-border-radius">%</label>
                                     <div class="text-1 all-radius-single">
                                         <input id="box-border-radius-single-tl" type="text" value="0" disabled>
                                     </div>
                                     <span>Border Radius Canto T/E</span>
-                                    <div id="slider-border-radius-tl" class="slider-bar large" data-value="0"
-                                        data-min="0" data-max="50" data-step="1">
+                                    <div id="slider-border-radius-tl" class="slider-bar large" data-value="0" data-min="0" data-max="50" data-step="1">
                                     </div>
                                 </div>
                                 <!-- TOP RIGHT -->
                                 <div class="row">
-                                    <label class="box-border-radius-single-tr float-right"
-                                        for="box-border-radius">%</label>
+                                    <label class="box-border-radius-single-tr float-right" for="box-border-radius">%</label>
                                     <div class="text-1 all-radius-single">
                                         <input id="box-border-radius-single-tr" type="text" value="0" disabled>
                                     </div>
                                     <span>Border Radius Canto T/D</span>
-                                    <div id="slider-border-radius-tr" class="slider-bar large" data-value="0"
-                                        data-min="0" data-max="50" data-step="1">
+                                    <div id="slider-border-radius-tr" class="slider-bar large" data-value="0" data-min="0" data-max="50" data-step="1">
                                     </div>
                                 </div>
                                 <!-- BOTTOM LEFT -->
                                 <div class="row">
-                                    <label class="box-border-radius-single-bl float-right"
-                                        for="box-border-radius">%</label>
+                                    <label class="box-border-radius-single-bl float-right" for="box-border-radius">%</label>
                                     <div class="text-1 all-radius-single">
                                         <input id="box-border-radius-single-bl" type="text" value="0" disabled>
                                     </div>
                                     <span>Border Radius Canto B/E</span>
-                                    <div id="slider-border-radius-bl" class="slider-bar large" data-value="0"
-                                        data-min="0" data-max="50" data-step="1">
+                                    <div id="slider-border-radius-bl" class="slider-bar large" data-value="0" data-min="0" data-max="50" data-step="1">
                                     </div>
                                 </div>
                                 <!-- BOTTOM RIGHT -->
                                 <div class="row">
-                                    <label class="box-border-radius-single-br float-right"
-                                        for="box-border-radius">%</label>
+                                    <label class="box-border-radius-single-br float-right" for="box-border-radius">%</label>
                                     <div class="text-1 all-radius-single">
                                         <input id="box-border-radius-single-br" type="text" value="0" disabled>
                                     </div>
                                     <span>Border Radius Canto B/D</span>
-                                    <div id="slider-border-radius-br" class="slider-bar large" data-value="0"
-                                        data-min="0" data-max="50" data-step="1">
+                                    <div id="slider-border-radius-br" class="slider-bar large" data-value="0" data-min="0" data-max="50" data-step="1">
                                     </div>
                                 </div>
                             </div>
@@ -178,8 +192,7 @@
                                     <input id="horizontal-length" type="text" value="0" disabled>
                                 </div>
                             </div>
-                            <div id="slider-horizontal-bs" class="slider-bar large" data-value="0" data-min="-200"
-                                data-max="200" data-step="1">
+                            <div id="slider-horizontal-bs" class="slider-bar large" data-value="0" data-min="-200" data-max="200" data-step="1">
                             </div>
                             <!-- CONFIG VERTICAL LENGTH -->
                             <div class="row mt-3">
@@ -189,8 +202,7 @@
                                     <input id="vertical-length" type="text" value="0" disabled>
                                 </div>
                             </div>
-                            <div id="slider-vertical-bs" class="slider-bar large" data-value="0" data-min="-200"
-                                data-max="200" data-step="1">
+                            <div id="slider-vertical-bs" class="slider-bar large" data-value="0" data-min="-200" data-max="200" data-step="1">
                             </div>
                         </div>
                         <!-- CONFIG BLUR RADIUS -->
@@ -202,8 +214,7 @@
                                     <input id="blur-radius" type="text" value="36" disabled>
                                 </div>
                             </div>
-                            <div id="slider-blur-bs" class="slider-bar large" data-value="80" data-min="0"
-                                data-max="300" data-step="1">
+                            <div id="slider-blur-bs" class="slider-bar large" data-value="80" data-min="0" data-max="300" data-step="1">
                             </div>
                             <!-- CONFIG BLUR RADIUS SPREAD RADIUS-->
                             <div class="row mt-3">
@@ -213,8 +224,7 @@
                                     <input id="spread-field" type="text" value="36" disabled>
                                 </div>
                             </div>
-                            <div id="slider-spread-field" class="slider-bar large" data-value="0" data-min="-200"
-                                data-max="200" data-step="1">
+                            <div id="slider-spread-field" class="slider-bar large" data-value="0" data-min="-200" data-max="200" data-step="1">
                             </div>
                         </div>
                         <!-- CONFIG BOX COLOR -->
@@ -252,22 +262,17 @@
                                     <input id="shadow-opacity" type="text" value="0.75">
                                 </div>
                             </div>
-                            <div id="slider-opacity-bs" class="slider-bar large" data-value="0.85" data-min="0"
-                                data-max="1" data-step="0.01">
+                            <div id="slider-opacity-bs" class="slider-bar large" data-value="0.85" data-min="0" data-max="1" data-step="0.01">
                             </div>
                         </div>
                         <!-- CONFIG OUTLINE E INSET -->
                         <div class="block-config">
                             <div class="option-panel">
                                 <fieldset>
-                                    <label for="outline"
-                                        class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label">Outline</label>
-                                    <input type="radio" name="option" id="outline"
-                                        class="ui-checkboxradio ui-helper-hidden-accessible option">
-                                    <label for="inset"
-                                        class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label">Inset</label>
-                                    <input type="radio" name="option" id="inset"
-                                        class="ui-checkboxradio ui-helper-hidden-accessible option">
+                                    <label for="outline" class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label">Outline</label>
+                                    <input type="radio" name="option" id="outline" class="ui-checkboxradio ui-helper-hidden-accessible option">
+                                    <label for="inset" class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label">Inset</label>
+                                    <input type="radio" name="option" id="inset" class="ui-checkboxradio ui-helper-hidden-accessible option">
                                 </fieldset>
                             </div>
                         </div>
@@ -296,7 +301,12 @@
         </div>
         <div class="row justify-content-center mt-5 mb-3">
             <div class="banner ">
-                <img src="holder.js/728x90?theme=gray">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- 728x90-2 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8629327840737258" data-ad-slot="3968710533" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
         <!-- FOOTER -->
@@ -317,8 +327,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Lorem Ipsum</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Lorem Ipsum IMG</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bars"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -334,8 +343,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalAlertCodCopied" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modalAlertCodCopied" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-light">
@@ -346,8 +354,7 @@
                 </div>
                 <div class="modal-body">
                     <h4>Código copiado para área de transferência!</h4><br>
-                    Agora é só colar em seu <span class="text-danger">CSS</span> ou na tag <span
-                        class="text-danger">Style</span> do seu html, modificar
+                    Agora é só colar em seu <span class="text-danger">CSS</span> ou na tag <span class="text-danger">Style</span> do seu html, modificar
                     o nome da classe <span class="text-danger">( .sua-classe )</span> e já estará funcionando.
                 </div>
                 <div class="modal-footer">
