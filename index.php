@@ -5,6 +5,18 @@ include_once("./config/config.php");
 <html lang="pt-br">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179041880-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179041880-1');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,18 +36,7 @@ include_once("./config/config.php");
 
     <link type="text/css" rel="stylesheet" href="./css/all.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JNTXYGKFJV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-JNTXYGKFJV');
-    </script>
+    <script data-ad-client="ca-pub-8629327840737258" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
@@ -86,13 +87,37 @@ include_once("./config/config.php");
                         Configurações
                     </div>
                     <div class="card-body">
+                        <!-- LARGURA DO BOX -->
+                        <div class="block-config">
+                            <div class="row">
+                                <label for="border-lenght">Largura da DIV</label>
+                                <label class="align-right" for="div-width">px</label>
+                                <div class="text-1">
+                                    <input id="div-width" type="text" value="180" disabled>
+                                </div>
+                            </div>
+                            <div id="slider-div-width-bs" class="slider-bar large" data-value="180" data-min="50" data-max="350" data-step="1">
+                            </div>
+                        </div>
+                        <!-- ALTURA DO BOX -->
+                        <div class="block-config">
+                            <div class="row">
+                                <label for="border-lenght">Altura da DIV</label>
+                                <label class="align-right" for="div-height">px</label>
+                                <div class="text-1">
+                                    <input id="div-height" type="text" value="180" disabled>
+                                </div>
+                            </div>
+                            <div id="slider-div-height-bs" class="slider-bar large" data-value="180" data-min="50" data-max="350" data-step="1">
+                            </div>
+                        </div>
                         <!-- BORDER -->
                         <div class="block-config">
                             <div class="row">
                                 <label for="border-lenght">Tamanho da Borda</label>
-                                <label class="align-right" for="border-lenght">px</label>
+                                <label class="align-right" for="border-length">px</label>
                                 <div class="text-1">
-                                    <input id="border-length" type="text" value="1" disabled>
+                                    <input id="border-length" type="text" value="0" disabled>
                                 </div>
                             </div>
                             <div id="slider-border-bs" class="slider-bar large" data-value="0" data-min="0" data-max="100" data-step="1">
@@ -101,6 +126,7 @@ include_once("./config/config.php");
                             <div class="row mt-3">
                                 <label class="mr-3" for="style-border">Estilo da Borda</label>
                                 <select name="style-border" id="style-border">
+                                    <option>Nenhuma</option>
                                     <option>Solid</option>
                                     <option>Dotted</option>
                                     <option>Dashed</option>
@@ -199,7 +225,7 @@ include_once("./config/config.php");
                                 <label for="vertical-length">Tamanho Vertical</label>
                                 <label class="align-right" for="vertical-length">px</label>
                                 <div class="text-1">
-                                    <input id="vertical-length" type="text" value="0" disabled>
+                                    <input id="vertical-length" type="text" value="45" disabled>
                                 </div>
                             </div>
                             <div id="slider-vertical-bs" class="slider-bar large" data-value="0" data-min="-200" data-max="200" data-step="1">
@@ -211,7 +237,7 @@ include_once("./config/config.php");
                                 <label for="blur-radius">Propriedade Blur Radius</label>
                                 <label class="align-right" for="blur-radius">px</label>
                                 <div class="text-1">
-                                    <input id="blur-radius" type="text" value="36" disabled>
+                                    <input id="blur-radius" type="text" value="55" disabled>
                                 </div>
                             </div>
                             <div id="slider-blur-bs" class="slider-bar large" data-value="80" data-min="0" data-max="300" data-step="1">
@@ -221,7 +247,7 @@ include_once("./config/config.php");
                                 <label for="spread-field">Tamanho do Raio</label>
                                 <label class="align-right" for="spread-field">px</label>
                                 <div class="text-1">
-                                    <input id="spread-field" type="text" value="36" disabled>
+                                    <input id="spread-field" type="text" value="0" disabled>
                                 </div>
                             </div>
                             <div id="slider-spread-field" class="slider-bar large" data-value="0" data-min="-200" data-max="200" data-step="1">

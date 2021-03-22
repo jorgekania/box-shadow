@@ -40,6 +40,7 @@ $(document).ready(function () {
     }
 
     //QUAIS CAMPOS E ELEMENTOS
+    const boxPanel = $('#box-shadow-object');
     const horizontalLength = $('#horizontal-length');
     const verticalLength = $('#vertical-length');
     const blurRadius = $('#blur-radius');
@@ -48,7 +49,6 @@ $(document).ready(function () {
     const backgroundColor = $('#background-color');
     const shadowColor = $('#shadow-color');
     const shadowOpacity = $('#shadow-opacity');
-    const colorBoxPanel = $('#box-shadow-object');
     const colorBackgroundColor = $('#box-shadow-wrapper');
     const boxCode = $('#box-shadow-code');
     const boxBordeColor = $('#border-color');
@@ -62,8 +62,8 @@ $(document).ready(function () {
     var valBackgroundColor = backgroundColor.val();
     var valShadowColor = shadowColor.val();
     var valShadowOpacity = shadowOpacity.val();
-    var widthBoxPanel = colorBoxPanel.width();
-    var heightBoxPanel = colorBoxPanel.height();
+    var widthBoxPanel = boxPanel.width();
+    var heightBoxPanel = boxPanel.height();
     var tab = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
     var shadowBoxPanel;
     var inset;
@@ -83,6 +83,7 @@ $(document).ready(function () {
     $(".option-panel .option").click(function () {
         var option = $(this).attr('id');
         inset = option == 'inset' ? 'inset' : '';
+        boxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
         codeUpdate();
     })
 
@@ -120,7 +121,22 @@ $(document).ready(function () {
     $("#style-border").selectmenu({
         change: function (event, ui) {
             borderStyle = ui.item.value;
-            colorBoxPanel.css('border-style', borderStyle);
+            if (borderStyle == 'Nenhuma') {
+                borderStyle = 'none';
+                borderWidth = 0;
+                $("#border-length").val(borderWidth);
+                $("#slider-border-bs").find('span').eq(0).css('left', borderWidth);
+                boxPanel.css('border-width', borderWidth);
+
+            } else {
+                borderStyle = borderStyle;
+                borderWidth = borderWidth;
+                $("#border-length").val(borderWidth);
+                $("#slider-border-bs").find('span').eq(0).css('left', borderWidth);
+                boxPanel.css('border-width', borderWidth);
+
+            }
+            boxPanel.css('border-style', borderStyle);
             codeUpdate();
         }
     });
@@ -136,72 +152,82 @@ $(document).ready(function () {
             step: $el.data('step'),
             slide: function (event, ui) {
 
-                if (selected == 'slider-horizontal-bs') {
+                if (selected == 'slider-div-width-bs') {
+                    $("#div-width").val(ui.value);
+                    widthBoxPanel = ui.value;
+                    boxPanel.css('width', widthBoxPanel);
+
+                } else if (selected == 'slider-div-height-bs') {
+                    $("#div-height").val(ui.value);
+                    heightBoxPanel = ui.value;
+                    boxPanel.css('height', heightBoxPanel);
+
+                } else if (selected == 'slider-horizontal-bs') {
                     $("#horizontal-length").val(ui.value);
                     valHorizontalLength = ui.value;
-                    colorBoxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
+                    boxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
 
                 } else if (selected == 'slider-vertical-bs') {
                     $("#vertical-length").val(ui.value);
                     valVerticalLength = ui.value;
-                    colorBoxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
+                    boxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
 
                 } else if (selected == 'slider-blur-bs') {
                     $("#blur-radius").val(ui.value);
                     valBlurRadius = ui.value;
-                    colorBoxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
+                    boxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
 
                 } else if (selected == 'slider-spread-field') {
                     $("#spread-field").val(ui.value);
                     valSpreedField = ui.value;
-                    colorBoxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
+                    boxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
 
                 } else if (selected == 'slider-opacity-bs') {
                     $("#shadow-opacity").val(ui.value);
                     valShadowOpacity = ui.value;
-                    colorBoxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
+                    boxPanel.css('box-shadow', colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset));
 
                 }
                 //PARA OS SLIDERS BORDER
                 else if (selected == 'slider-border-bs') {
                     $("#border-length").val(ui.value);
                     borderWidth = ui.value;
-                    colorBoxPanel.css('border-width', borderWidth);
+                    boxPanel.css('border-width', borderWidth);
 
                 } else if (selected == 'slider-border-radius-all') {
                     $("#box-border-radius").val(ui.value);
                     borderRadius = ui.value;
                     valuePropBorderRadius = borderRadius;
                     propBorderRadius = 'border-radius';
-                    colorBoxPanel.css('border-radius', borderRadius + '%');
+                    boxPanel.css('border-radius', borderRadius + '%');
 
                 } else if (selected == 'slider-border-radius-tl') {
                     $("#box-border-radius-single-tl").val(ui.value);
                     borderRadiusTL = ui.value;
                     valuePropBorderRadius = borderRadiusTL;
                     propBorderRadius = 'border-top-left-radius';
-                    colorBoxPanel.css('border-top-left-radius', borderRadiusTL + '%');
+                    boxPanel.css('border-top-left-radius', borderRadiusTL + '%');
 
                 } else if (selected == 'slider-border-radius-tr') {
                     $("#box-border-radius-single-tr").val(ui.value);
                     borderRadiusTR = ui.value;
                     valuePropBorderRadius = borderRadiusTR;
                     propBorderRadius = 'border-top-right-radius';
-                    colorBoxPanel.css('border-top-right-radius', borderRadiusTR + '%');
+                    boxPanel.css('border-top-right-radius', borderRadiusTR + '%');
 
                 } else if (selected == 'slider-border-radius-bl') {
                     $("#box-border-radius-single-bl").val(ui.value);
                     borderRadiusBL = ui.value;
                     valuePropBorderRadius = borderRadiusBL;
                     propBorderRadius = 'border-bottom-left-radius';
-                    colorBoxPanel.css('border-bottom-left-radius', borderRadiusBL + '%');
+                    boxPanel.css('border-bottom-left-radius', borderRadiusBL + '%');
 
                 } else if (selected == 'slider-border-radius-br') {
                     $("#box-border-radius-single-br").val(ui.value);
                     borderRadiusBR = ui.value;
                     valuePropBorderRadius = borderRadiusBR;
                     propBorderRadius = 'border-bottom-right-radius';
-                    colorBoxPanel.css('border-bottom-right-radius', borderRadiusBR + '%');
+                    boxPanel.css('border-bottom-right-radius', borderRadiusBR + '%');
                 }
                 codeUpdate();
             }
@@ -230,13 +256,13 @@ $(document).ready(function () {
 
             if (selected == 'box-color') {
                 valBoxColor = colorEl();
-                colorBoxPanel.css('background-color', valBoxColor);
+                boxPanel.css('background-color', valBoxColor);
                 codeUpdate();
             } else if (selected == 'shadow-color') {
                 valShadowColor = color.toHexString();
                 valShadowOpacity = color['_a'];
                 shadowBoxPanel = colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset);
-                colorBoxPanel.css('box-shadow', shadowBoxPanel);
+                boxPanel.css('box-shadow', shadowBoxPanel);
                 codeUpdate();
             } else if (selected == 'background-color') {
                 valBackgroundColor = colorEl();
@@ -244,7 +270,7 @@ $(document).ready(function () {
                 codeUpdate();
             } else if (selected == 'border-color') {
                 borderColor = colorEl();
-                colorBoxPanel.css('border-color', borderColor);
+                boxPanel.css('border-color', borderColor);
                 codeUpdate();
             }
         }
@@ -273,7 +299,9 @@ $(document).ready(function () {
         }
 
         boxCode.html(
-            '<span class="class"><i>.sua-classe</span> <span class="keys"></i>{</span>\n' +
+            '<span class="class"><i>.nome-da-sua-classe</span> <span class="keys"></i>{</span>\n' +
+            '<div>' + tab + 'width: <span class="valueProp">' + widthBoxPanel + 'px</span>;</div>\n' +
+            '<div>' + tab + 'height: <span class="valueProp">' + heightBoxPanel + 'px</span>;</div>\n' +
             '<div>' + tab + 'background-color: <span class="valueProp">' + rgbToHex(valBoxColor) + '</span>;</div>\n' +
             '<div>' + tab + 'border-color: <span class="valueProp">' + rgbToHex(borderColor) + '</span>;</div>\n' +
             '<div>' + tab + 'border-width: <span class="valueProp">' + borderWidth + 'px</span>;</div>\n' +
@@ -288,7 +316,7 @@ $(document).ready(function () {
 
     //FUNÇÃO INICIAL PARA FORMATAÇÃO DO BOX SHADOW
     const updateShadow = () => {
-        colorBoxPanel.css({
+        boxPanel.css({
             '-webkit-box-shadow': colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset),
             '-moz-box-shadow': colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset),
             'box-shadow': colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset),
