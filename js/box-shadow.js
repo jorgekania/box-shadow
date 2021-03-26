@@ -77,6 +77,8 @@ $(document).ready(function () {
     var propBorderRadius = 'border-radius';
     var valuePropBorderRadius = borderRadius;
     var codBorderRadius;
+    var cssBorder;
+    var cssBorderC;
 
     // INSET BUTTON
     $(".option-panel input").checkboxradio();
@@ -122,6 +124,7 @@ $(document).ready(function () {
         change: function (event, ui) {
             borderStyle = ui.item.value;
             if (borderStyle == 'Nenhuma') {
+                borderStyle = 0;
                 borderStyle = 'none';
                 borderWidth = 0;
                 $("#border-length").val(borderWidth);
@@ -298,19 +301,40 @@ $(document).ready(function () {
             borderColor = hexToRGB(borderColor);
         }
 
+        //VERIFICA SE EXISTE BORDER
+        if (borderStyle !== 'nenhuma') {
+            cssBorder = '<div>' + tab + 'border-color: <span class="valueProp">' + rgbToHex(borderColor) + '</span>;</div>\n';
+            cssBorder += '<div>' + tab + 'border-width: <span class="valueProp">' + borderWidth + 'px</span>;</div>\n';
+            cssBorder += '<div>' + tab + 'border-style: <span class="valueProp">' + borderStyle + '</span>;</div>\n';
+            
+            cssBorderC = '<span class="cssComment">/*A propriedade BORDER Também pode ser utilizado assim*/</span>\n';
+            cssBorderC += '<span class="class"><i>.nome-da-sua-classe</span> <span class="keys"></i>{</span>\n';
+            cssBorderC += '<div>' + tab + 'width: <span class="valueProp">' + widthBoxPanel + 'px</span>;</div>\n';
+            cssBorderC += '<div>' + tab + 'height: <span class="valueProp">' + heightBoxPanel + 'px</span>;</div>\n';
+            cssBorderC += '<div>' + tab + 'background-color: <span class="valueProp">' + rgbToHex(valBoxColor) + '</span>;</div>\n';
+            cssBorderC += '<div>' + tab + 'border: <span class="valueProp">' + borderWidth + "px " + borderStyle + " " + rgbToHex(borderColor) + '</span>;</div>\n';
+            cssBorderC += codBorderRadius;
+            cssBorderC += '<div>' + tab + '-webkit-box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n';
+            cssBorderC += '<div>' + tab + '-moz-box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n';
+            cssBorderC += '<div>' + tab + 'box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n';
+            cssBorderC += '<span class="keys">}</span>\n';
+        } else {
+            cssBorder = '';
+            cssBorderC = '';
+        }
+
         boxCode.html(
             '<span class="class"><i>.nome-da-sua-classe</span> <span class="keys"></i>{</span>\n' +
             '<div>' + tab + 'width: <span class="valueProp">' + widthBoxPanel + 'px</span>;</div>\n' +
             '<div>' + tab + 'height: <span class="valueProp">' + heightBoxPanel + 'px</span>;</div>\n' +
             '<div>' + tab + 'background-color: <span class="valueProp">' + rgbToHex(valBoxColor) + '</span>;</div>\n' +
-            '<div>' + tab + 'border-color: <span class="valueProp">' + rgbToHex(borderColor) + '</span>;</div>\n' +
-            '<div>' + tab + 'border-width: <span class="valueProp">' + borderWidth + 'px</span>;</div>\n' +
-            '<div>' + tab + 'border-style: <span class="valueProp">' + borderStyle + '</span>;</div>\n' +
+            cssBorder +
             codBorderRadius +
             '<div>' + tab + '-webkit-box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n' +
             '<div>' + tab + '-moz-box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n' +
             '<div>' + tab + 'box-shadow: <span class="valueProp">' + colorInti(valShadowColor, valShadowOpacity, valHorizontalLength, valVerticalLength, valBlurRadius, valSpreedField, inset) + ';</span></div>\n' +
-            '<span class="keys">}</span>'
+            '<span class="keys">}</span>\n' +
+            cssBorderC
         );
     }
 

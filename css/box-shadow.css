@@ -389,3 +389,12 @@ html .ui-button.ui-state-disabled:active{
 .box-border-radius-single-tl, .box-border-radius-single-tr, .box-border-radius-single-bl, .box-border-radius-single-br{
     margin: 0 10px 0 0 !important;
 }
+
+.cssComment{
+    display: block;
+    margin: 10px 0 0 0;
+    color: #aaa;
+    font-style: italic;
+}
+
+    
